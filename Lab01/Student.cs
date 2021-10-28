@@ -8,50 +8,45 @@ namespace Lab01
 {
     class Student
     {
-        private string _firstname { get; set; }
-        private string _surname { get; set; }
-        private string _groupIndex { get; set; }
-        private string _faculty { get; set; }
-        private int _specialization { get; set; }
-        private int _academicPerformance { get; set; }
-        private DateTime _dateOfBirth { get; set; }
-        private DateTime _dateOfEnter { get; set; }
+        public string firstname { get; set; }
+        public string surname { get; set; }
+        public string groupIndex { get; set; }
+        public string faculty { get; set; }
+        public int specialization { get; set; }
+        public int academicPerformance { get; set; }
+        public DateTime dateOfBirth { get; set; }
+        public DateTime dateOfEnter { get; set; }
+        public IPrinter printer;
 
-        public void print()
+        public override string ToString()
         {
-            Console.WriteLine($"Fistname: {_firstname}\n" +
-                $"Surname: {_surname}\n" +
-                $"Date of birth: {_dateOfBirth.Date.Day}.{_dateOfBirth.Date.Month}.{_dateOfBirth.Date.Year}\n" +
-                $"Date of enter: {_dateOfEnter.Date.Day}.{_dateOfEnter.Date.Month}.{_dateOfEnter.Date.Year}\n" +
-                $"Index of group: {_groupIndex}\n" +
-                $"Faculty: {_faculty}\n" +
-                $"Specialization: {_specialization}\n" +
-                $"Academic Performance: {_academicPerformance}\n" +
-                $"----------------------------------------------------");
+            return "Fristname: " + firstname + "\nSurname" + surname + 
+                "\nDate of birth: " + dateOfBirth.Day +"."+ dateOfBirth.Month+"."+dateOfBirth.Year +
+                "\nDate of enter: " + dateOfEnter.Day +"."+ dateOfBirth.Month+"."+dateOfBirth.Year +
+                "\nIndex of group: " + groupIndex + "\nFaculty: " + faculty
+                "\nSpecialization: " + specialization + "\nAcademic Performance: " + academicPerfoemance;
         }
 
-        public Student()
+        public void Print()
         {
-            _firstname = "Oleksii";
-            _surname = "Abdullin";
-            _groupIndex = "a";
-            _faculty = "CIT";
-            _specialization = 123;
-            _academicPerformance = 86;
-            _dateOfBirth = new DateTime(2002, 5, 31);
-            _dateOfEnter = new DateTime(2019, 8, 12);
+            printer.Print(this.ToString());
+        }
+
+        public Student() : base("Oleksii", "Abdullin", "a", "CIT", 123, 86, new DateTime(2002, 5, 31), new DateTime(2019, 8, 12))
+        {
+
         }
         public Student(string firstname, string surname, string groupIndex, string faculty, 
             int specialization, int academicPerfoemance, DateTime dateOfBirth, DateTime dateOfEnter)
         {
-            _firstname = firstname;
-            _surname = surname;
-            _groupIndex = groupIndex;
-            _faculty = faculty;
-            _specialization = specialization;
-            _academicPerformance = academicPerfoemance;
-            _dateOfBirth = dateOfBirth;
-            _dateOfEnter = dateOfEnter;
+            this.firstname = firstname;
+            this.surname = surname;
+            this.groupIndex = groupIndex;
+            this.faculty = faculty;
+            this.specialization = specialization;
+            this.academicPerformance = academicPerfoemance;
+            this.dateOfBirth = dateOfBirth;
+            this.dateOfEnter = dateOfEnter;
         }
     }
 }
