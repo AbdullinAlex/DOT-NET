@@ -18,7 +18,6 @@ namespace Abdullin03
             int option;
             bool inMenu = true;
             string path = "lab03.json";
-            var ms = new MemoryStream();
             var serializer = new DataContractJsonSerializer(typeof(List<Student>));
             while (inMenu)
             {
