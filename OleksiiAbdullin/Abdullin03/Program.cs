@@ -1,6 +1,5 @@
 ﻿
-
-namespace Abdullin01
+namespace Abdullin03
 {
     class Program
     {

@@ -1,0 +1,7 @@
+C:\Users\drftg\source\repos\OleksiiAbdullin\Abdullin03\bin\Debug\Abdullin03.exe.config
+C:\Users\drftg\source\repos\OleksiiAbdullin\Abdullin03\bin\Debug\Abdullin03.exe
+C:\Users\drftg\source\repos\OleksiiAbdullin\Abdullin03\bin\Debug\Abdullin03.pdb
+C:\Users\drftg\source\repos\OleksiiAbdullin\Abdullin03\obj\Debug\Abdullin03.csprojAssemblyReference.cache
+C:\Users\drftg\source\repos\OleksiiAbdullin\Abdullin03\obj\Debug\Abdullin03.csproj.CoreCompileInputs.cache
+C:\Users\drftg\source\repos\OleksiiAbdullin\Abdullin03\obj\Debug\Abdullin03.exe
+C:\Users\drftg\source\repos\OleksiiAbdullin\Abdullin03\obj\Debug\Abdullin03.pdb

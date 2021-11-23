@@ -1,24 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using System.Runtime.Serialization.Json;
+using System.IO;
+using System.Text;
+using System.Xml;
 
-
-namespace Abdullin01
+namespace Abdullin03
 {
     public class Menu
     {
         public void MenuStudents()
         {
-            var students = new List<Student>();
-            students.Add(new Student());
+            var MyCollection = new MyCollection();
+            MyCollection.Add(new Student());
+
             int option;
             bool inMenu = true;
+            string path = "lab03.json";
+            var ms = new MemoryStream();
+            var serializer = new DataContractJsonSerializer(typeof(List<Student>));
             while (inMenu)
             {
                 Console.WriteLine("Menu options:");
                 Console.WriteLine("1. Add");
                 Console.WriteLine("2. Remove");
                 Console.WriteLine("3. Show all students");
+                Console.WriteLine("4. Ser");
+                Console.WriteLine("5. Deser");
                 Console.WriteLine("0. Exit");
                 Console.Write("Enter your option: ");
 
@@ -110,7 +119,7 @@ namespace Abdullin01
 
                         Student s = new Student(firstname, surname, groupIndex, faculty, specialization,
                             academicPerformance, dateOfBirth, dateOfEnter);
-                        students.Add(s);
+                        MyCollection.Add(s);
                         break;
                     case 2:
                         int id;
@@ -121,10 +130,10 @@ namespace Abdullin01
                             break;
                         }
 
-                        bool result = id <= students.Count - 1;
-                        if (result && id >= 0)
+                        bool result = MyCollection.Remove(id);
+                      
+                        if (result)
                         {
-                            students.RemoveAt(id);
                             Console.Write("\nStudent was deleted succsessfully.\n");
                         }
                         else
@@ -133,19 +142,39 @@ namespace Abdullin01
                         }
                         break;
                     case 3:
-                        if (students.Count > 0)
+                        int i = 0;
+                        foreach (var stud in MyCollection)
                         {
-                            int i = 0;
-                            foreach (Student stud in students)
+                            Console.WriteLine("\nStudent ID: " + i);
+                            stud.Print();
+                            i++;
+                        }
+                        break;
+                    case 4:
+                        using (var file = new FileStream(path, FileMode.Create))
+                        {
+                            using (var jsonw = JsonReaderWriterFactory.CreateJsonWriter(file, Encoding.GetEncoding("utf-8")))
                             {
-                                Console.WriteLine("\nStudent ID: " + i);
-                                stud.Print();
-                                i++;
+                                serializer.WriteObject(jsonw, MyCollection.GetStudents());
+                                jsonw.Flush();
                             }
                         }
-                        else
+                        break;
+                    case 5:
+                        List<Student> obj = Activator.CreateInstance<List<Student>>();
+                        using (FileStream file = new FileStream(path, FileMode.Open))
                         {
-                            Console.WriteLine("\nList is empty!\n");
+                            using (XmlDictionaryReader jsonr = JsonReaderWriterFactory.CreateJsonReader(file,
+                                    Encoding.GetEncoding("utf-8"), XmlDictionaryReaderQuotas.Max, null))
+                            {
+                                obj = serializer.ReadObject(jsonr) as List<Student>;
+                            }
+                        }
+                        MyCollection.Clear();
+                        foreach (var stud in obj)
+                        {
+                            stud.printer = new ConsolePrinter();
+                            MyCollection.Add(stud);
                         }
                         break;
                     case 0:

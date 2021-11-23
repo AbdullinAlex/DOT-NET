@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 
 namespace Abdullin02
@@ -17,7 +15,7 @@ namespace Abdullin02
                 stud = new Student();
                 studentArray[i] = stud;
             }
-            stud = new Student("Fayana", "Rucus", "b", "KS", 121, 78, new DateTime(2006, 07, 11), new DateTime(2021, 08, 11));
+            stud = new Student("Fayana", "Rucus", "b", "CS", 121, 78, new DateTime(2006, 07, 11), new DateTime(2021, 08, 11));
 
             var MyCollection = new MyCollection();
 

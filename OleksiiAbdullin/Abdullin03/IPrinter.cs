@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Abdullin01
+namespace Abdullin03
 {
     public interface IPrinter
     {
