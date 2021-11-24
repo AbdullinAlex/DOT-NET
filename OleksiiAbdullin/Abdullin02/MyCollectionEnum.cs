@@ -6,18 +6,18 @@ namespace Abdullin02
 {
     public class MyCollectionEnum : IEnumerator
     {
-        public List<Student> _stud;
+        public List<Student> Stud;
 
         int position = -1;
         public MyCollectionEnum(List<Student> stud)
         {
-            _stud = stud;
+            Stud = stud;
         }
 
         public bool MoveNext()
         {
             position++;
-            return (position < _stud.Count);
+            return (position < Stud.Count);
         }
 
         public void Reset()
@@ -39,7 +39,7 @@ namespace Abdullin02
             {
                 try
                 {
-                    return _stud[position];
+                    return Stud[position];
                 }
                 catch (IndexOutOfRangeException)
                 {
