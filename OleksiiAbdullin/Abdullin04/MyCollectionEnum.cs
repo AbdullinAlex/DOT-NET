@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Abdullin02
+namespace Abdullin04
 {
     public class MyCollectionEnum : IEnumerator
     {

@@ -4,8 +4,8 @@ C:\Users\drftg\source\repos\OleksiiAbdullin\Abdullin02\bin\Debug\Abdullin02.pdb
 C:\Users\drftg\source\repos\OleksiiAbdullin\Abdullin02\bin\Debug\Abdullin01.exe
 C:\Users\drftg\source\repos\OleksiiAbdullin\Abdullin02\bin\Debug\Abdullin01.pdb
 C:\Users\drftg\source\repos\OleksiiAbdullin\Abdullin02\bin\Debug\Abdullin01.exe.config
-C:\Users\drftg\source\repos\OleksiiAbdullin\Abdullin02\obj\Debug\Abdullin02.csprojAssemblyReference.cache
 C:\Users\drftg\source\repos\OleksiiAbdullin\Abdullin02\obj\Debug\Abdullin02.csproj.CoreCompileInputs.cache
 C:\Users\drftg\source\repos\OleksiiAbdullin\Abdullin02\obj\Debug\Abdullin02.csproj.CopyComplete
 C:\Users\drftg\source\repos\OleksiiAbdullin\Abdullin02\obj\Debug\Abdullin02.exe
 C:\Users\drftg\source\repos\OleksiiAbdullin\Abdullin02\obj\Debug\Abdullin02.pdb
+C:\Users\drftg\source\repos\OleksiiAbdullin\Abdullin02\obj\Debug\Abdullin02.csproj.AssemblyReference.cache

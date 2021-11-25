@@ -1,32 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text.RegularExpressions;
-using System.Runtime.Serialization.Json;
 using System.IO;
+using System.Runtime.Serialization.Json;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Xml;
+using Abdullin03;
 
-namespace Abdullin03
+namespace Abdullin04
 {
     public class Menu
     {
         public void MenuStudents()
         {
+            Student student;
             var MyCollection = new MyCollection();
             MyCollection.Add(new Student());
 
             int option;
             bool inMenu = true;
-            string path = "lab03.json";
+            string path = "lab04.json";
             var serializer = new DataContractJsonSerializer(typeof(List<Student>));
             while (inMenu)
             {
                 Console.WriteLine("Menu options:");
                 Console.WriteLine("1. Add");
                 Console.WriteLine("2. Remove");
-                Console.WriteLine("3. Show all students");
-                Console.WriteLine("4. Serialization");
-                Console.WriteLine("5. Deserialization");
+                Console.WriteLine("3. Show students");
+                Console.WriteLine("4. Ser");
+                Console.WriteLine("5. Deser");
                 Console.WriteLine("0. Exit");
                 Console.Write("Enter your option: ");
 
@@ -130,7 +132,7 @@ namespace Abdullin03
                         }
 
                         bool result = MyCollection.Remove(id);
-                      
+
                         if (result)
                         {
                             Console.Write("\nStudent was deleted succsessfully.\n");
@@ -141,12 +143,84 @@ namespace Abdullin03
                         }
                         break;
                     case 3:
-                        int i = 0;
-                        foreach (var stud in MyCollection)
+                        int i;
+                        int optionOutput;
+                        Console.WriteLine("\nMenu Output options:");
+                        Console.WriteLine("1. Show all students");
+                        Console.WriteLine("2. Show course and semester of student");
+                        Console.WriteLine("3. Show group of student");
+                        Console.WriteLine("4. Show age of student");
+                        Console.Write("Enter your option: ");
+                        if (!int.TryParse(Console.ReadLine(), out optionOutput))
                         {
-                            Console.WriteLine("\nStudent ID: " + i);
-                            stud.Print();
-                            i++;
+                            Console.Write("\nError! Invalid datatype. \n");
+                            break;
+                        }
+                        switch (optionOutput)
+                        {
+                            case 1:
+                                i = 0;
+                                foreach (var stud in MyCollection)
+                                {
+                                    Console.WriteLine("\nStudent ID: " + i);
+                                    stud.Print();
+                                    i++;
+                                }
+                                break;
+                            case 2:
+                                Console.Write("Enter the student id: ");
+                                if (!int.TryParse(Console.ReadLine(), out id))
+                                {
+                                    Console.Write("\nError! Invalid datatype. \n");
+                                    break;
+                                }
+                                student = MyCollection.GetStudentById(id);
+                                if (student != null)
+                                {
+                                    Console.WriteLine(student.CountCourse()); 
+                                }
+                                else
+                                {
+                                    Console.WriteLine("\nError! Invalid student id.");
+                                }
+                                break;
+                            case 3:
+                                Console.Write("Enter the student id: ");
+                                if (!int.TryParse(Console.ReadLine(), out id))
+                                {
+                                    Console.Write("\nError! Invalid datatype. \n");
+                                    break;
+                                }
+                                student = MyCollection.GetStudentById(id);
+                                if (student != null)
+                                {
+                                    Console.WriteLine(student.GetGroup());
+                                }
+                                else
+                                {
+                                    Console.WriteLine("\nError! Invalid student id.");
+                                }
+                                break;
+                            case 4:
+                                Console.Write("Enter the student id: ");
+                                if (!int.TryParse(Console.ReadLine(), out id))
+                                {
+                                    Console.Write("\nError! Invalid datatype. \n");
+                                    break;
+                                }
+                                student = MyCollection.GetStudentById(id);
+                                if (student != null)
+                                {
+                                    Console.WriteLine(student.CountAge());
+                                }
+                                else
+                                {
+                                    Console.WriteLine("\nError! Invalid student id.");
+                                }
+                                break;
+                            default:
+                                Console.WriteLine("\nIncorrect option. Try again.\n");
+                                break;
                         }
                         break;
                     case 4:
