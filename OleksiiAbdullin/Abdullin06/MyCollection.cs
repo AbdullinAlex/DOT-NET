@@ -42,10 +42,10 @@ namespace Abdullin04
         public bool RemoveBySpecialization(int specialization)
         {
             bool flag = false;
-            var query = (from studens in _studentsArray
+            var query = from studens in _studentsArray
                         where studens.Specialization == specialization
-                        select studens).ToArray();
-            foreach (var item in query)
+                        select studens;
+            foreach (var item in query.ToArray())
             {
                 flag = _studentsArray.Remove(item);
             }
