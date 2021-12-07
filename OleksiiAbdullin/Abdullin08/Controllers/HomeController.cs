@@ -1,10 +1,12 @@
 ﻿using Abdullin08.Data;
 using Abdullin08.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System.Diagnostics;
 using System.Threading.Tasks;
+
 
 namespace Abdullin08.Controllers
 {
@@ -27,6 +29,11 @@ namespace Abdullin08.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(Student student)
         {
+            if (!Validation.isCorrect(student))
+            {
+                TempData["notice"] = "Error! Invalid data. Student was not registered.";
+                return RedirectToAction("Index");
+            }
             _db.Students.Add(student);
             await _db.SaveChangesAsync();
             return RedirectToAction("Index");

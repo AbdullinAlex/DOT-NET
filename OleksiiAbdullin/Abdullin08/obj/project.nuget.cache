@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "MpWAOUh4NDaM1PZZpoPVPvAYNZRIjU6qy54FrP4CF2a9LBYgSYZ9gRRj8yQtWQX+XtTRmP8kQd36g08vB7JPsQ==",
+  "dgSpecHash": "Gqa42xu1bcN6Ofw0RfRbO/of/bzxvZs0i1Y3nTdIKhF60nsCOyqHer+3M+FOdULE61lYPcgOJP9dPjvub1oPQg==",
   "success": true,
   "projectFilePath": "C:\\Users\\drftg\\source\\repos\\OleksiiAbdullin\\Abdullin08\\Abdullin08.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\drftg\\.nuget\\packages\\clientdependency\\1.9.9\\clientdependency.1.9.9.nupkg.sha512",
+    "C:\\Users\\drftg\\.nuget\\packages\\extended.wpf.toolkit\\3.5.0\\extended.wpf.toolkit.3.5.0.nupkg.sha512",
     "C:\\Users\\drftg\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\3.1.20\\microsoft.aspnetcore.mvc.razor.extensions.3.1.20.nupkg.sha512",
     "C:\\Users\\drftg\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.runtimecompilation\\3.1.20\\microsoft.aspnetcore.mvc.razor.runtimecompilation.3.1.20.nupkg.sha512",
     "C:\\Users\\drftg\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\3.1.20\\microsoft.aspnetcore.razor.language.3.1.20.nupkg.sha512",
@@ -102,5 +104,26 @@
     "C:\\Users\\drftg\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
     "C:\\Users\\drftg\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Пакет \"ClientDependency 1.9.9\" был восстановлен с помощью \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\", а не целевой платформы проекта \".NETCoreApp,Version=v3.1\". Этот пакет может быть не полностью совместим с вашим проектом.",
+      "libraryId": "ClientDependency",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Пакет \"Extended.Wpf.Toolkit 3.5.0\" был восстановлен с помощью \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\", а не целевой платформы проекта \".NETCoreApp,Version=v3.1\". Этот пакет может быть не полностью совместим с вашим проектом.",
+      "libraryId": "Extended.Wpf.Toolkit",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }

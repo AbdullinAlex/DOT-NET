@@ -15,11 +15,13 @@
             </tr>
         </thead>
         <tbody>
-            <td>@Model.Id</td>
-            <td>@Model.FirstName</td>
-            <td>@Model.SurName</td>
-            <td>@Model.Group</td>
-            <td>@Model.AcademicPerformance</td>
+        <td>@Model.Id</td>
+        <td>@Model.FirstName</td>
+        <td>@Model.SurName</td>
+        <td>@Model.Group</td>
+        <td>@Model.AcademicPerformance</td>
         </tbody>
     </table>
+    <a asp-action="Edit" asp-controller="Home" class="btn btn-outline-dark" asp-route-id="@Model.Id">Edit</a>
+    <a asp-action="Delete" asp-controller="Home" class="btn btn-outline-danger" asp-route-id="@Model.Id">Delete</a>
 </div>
